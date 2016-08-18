@@ -1,0 +1,14 @@
+{
+  "name": "long-live-flux",
+  "version": "1.0.0",
+  "description": "Slides",
+  "main": "index.html",
+  "repository": "alexeyraspopov/long-live-flux",
+  "author": "Alexey Raspopov",
+  "license": "MIT",
+  "homepage": "https://alexeyraspopov.github.io/long-live-flux/",
+  "dependencies": {
+    "shower-core": "~2.0.7",
+    "shower-ribbon": "~2.0.8"
+  }
+}
