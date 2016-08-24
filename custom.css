@@ -1,0 +1,49 @@
+.slide {
+  padding: 80px 100px 0;
+}
+.slide::after {
+  top: 85%;
+  width: auto;
+  background: none;
+  color: rgba(0, 0, 0, 0.3);
+}
+.slide.snippet {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide h2.shout,
+.slide p,
+.slide li {
+  font-family: 'PT Serif', 'Georgia', serif;
+}
+.slide pre code {
+  font-family: 'FiraCode', 'Consolas', monospace;
+  line-height: 1.7;
+}
+.slide pre code:not(:only-child)::before {
+  margin-left: -2.5em;
+  content: counter(code, decimal-leading-zero);
+  opacity: 0.6;
+}
+.slide h2.shout {
+  font-size: 90px;
+  line-height: 1.2;
+}
+.slide h2 {
+	color: rgba(0, 0, 0, 0.87);
+}
+.slide h2 code {
+  padding: 0;
+  background: none;
+}
+.slide h2.shout code {
+  font-size: 68px;
+}
+.slide .primary-accent {
+	color: #303f9f;
+}
+.slide .secondary-accent {
+	color: #c2185b;
+}

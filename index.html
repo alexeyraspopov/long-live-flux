@@ -1,20 +1,132 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en-US">
 <head>
 	<title>Long live Flux!</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="fonts.css">
+	<link rel="stylesheet" href="custom.css">
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Flux Is Dead. Long Live Flux!</h1>
+		<h1>Flux is Dead. Long Live Flux!</h1>
 		<p><a href="https://twitter.com/alexeyraspopov">Alexey Raspopov</a>, <a href="https://datarobot.com/">DataRobot</a>.</p>
 	</header>
 
 	<section class="slide">
-		<h2 class="shout">Flux is dead.<br> Long live Flux!</h2>
+		<h2 class="shout">Flux is dead.<br> Long live <em class="primary-accent">Flux</em>!</h2>
+	</section>
+
+	<section class="slide">
+		<h2><code>$ whoami</code></h2>
+
+		<ul>
+			<li>5 years of moving buttons <em class="primary-accent">3px</em> to the left</li>
+			<li>FrontEnd Dev @ <a href="https://datarobot.com">DataRobot</a></li>
+			<li>Making some <a href="https://github.com/alexeyraspopov">Open Source</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout code"><code>npm i --save <br><span class="primary-accent">flux</span> <span class="secondary-accent">immutable</span></code></h2>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>class TodoListStore extends <mark>ReduceStore</mark> {</code>
+			<code>  getInitialState() {</code>
+			<code>    return new Map();</code>
+			<code>  }</code>
+			<code>  reduce(todos, action) {</code>
+			<code>    switch (action.type) {</code>
+			<code>    case <mark>TODO_CREATED</mark>:</code>
+			<code>      return todos.set(action.id, action.todo);</code>
+			<code>    default:</code>
+			<code>      return todos;</code>
+			<code>    }</code>
+			<code>  }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>const Shape = { firstName: 'John', lastName: 'Doe',</code>
+			<code>                age: 0, isActive: true };</code>
+			<code>&nbsp;</code>
+			<code>class <span class="primary-accent">UserRecord</span> extends <mark>Record(Shape)</mark> {</code>
+			<code>  get fullName() {</code>
+			<code>    return `${this.firstName} ${this.lastName}`;</code>
+			<code>  }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>class Users {</code>
+			<code>  async create(data) { ... }</code>
+			<code>  async retrieve(id) { ... }</code>
+			<code>  async update(id, data) { ... }</code>
+			<code>  async destroy(id) { ... }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>class Users {</code>
+			<code>  async retrieve(id) {</code>
+			<code>    try {</code>
+			<code>      const response = await get(`/users/${id}`);</code>
+			<code>      const user = await response.json();</code>
+			<code>&nbsp;</code>
+			<code>      return new UserRecord(user);</code>
+			<code>    } catch (error) {</code>
+			<code>      throw new AccessError('Oops');</code>
+			<code>    }</code>
+			<code>  }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>class UserListContainer extends <mark>React.Component</mark> {</code>
+			<code>  static getStores() {</code>
+			<code>    return [UserListStore];</code>
+			<code>  }</code>
+			<code>  static calculateState() {</code>
+			<code>    const users = UserListStore.getUsers();</code>
+			<code>    return { users };</code>
+			<code>  }</code>
+			<code>  render() {</code>
+			<code>    return &lt;<mark>UserList</mark> users={this.state.users} /&gt;;</code>
+			<code>  }</code>
+			<code>}</code>
+			<code>&nbsp;</code>
+			<code>export default Container.create(UserListContainer);</code>
+		</pre>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>function getStores() {</code>
+			<code>  return [UserListStore];</code>
+			<code>}</code>
+			<code>&nbsp;</code>
+			<code>function calculateState() {</code>
+			<code>  const users = UserListStore.getUsers();</code>
+			<code>  return { users };</code>
+			<code>}</code>
+			<code>&nbsp;</code>
+			<code>export default Container.create(<mark>UserList</mark>,</code>
+			<code>                                getStores,</code>
+			<code>                                calculateState);</code>
+		</pre>
 	</section>
 
 	<section class="slide">
@@ -30,6 +142,7 @@
 
 	<div class="progress"></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
+	<script src="highlight.js"></script>
 	<!-- Copyright © 2016 Alexey Raspopov, DataRobot. -->
 </body>
 </html>
