@@ -26,30 +26,217 @@
 		<ul>
 			<li>5 years of moving buttons <em class="primary-accent">3px</em> to the left</li>
 			<li>FrontEnd Dev @ <a href="https://datarobot.com">DataRobot</a></li>
-			<li>Making some <a href="https://github.com/alexeyraspopov">Open Source</a></li>
+			<li><a href="https://github.com/alexeyraspopov">Making</a> some open source</li>
 		</ul>
 	</section>
 
 	<section class="slide">
-		<h2 class="shout code"><code>npm i --save <br><span class="primary-accent">flux</span> <span class="secondary-accent">immutable</span></code></h2>
+		<h2 class="shout">A year of <em class="primary-accent">hype</em>!</h2>
 	</section>
 
 	<section class="slide snippet">
 		<pre>
-			<code>class TodoListStore extends <mark>ReduceStore</mark> {</code>
-			<code>  getInitialState() {</code>
-			<code>    return new Map();</code>
-			<code>  }</code>
-			<code>  reduce(todos, action) {</code>
-			<code>    switch (action.type) {</code>
-			<code>    case <mark>TODO_CREATED</mark>:</code>
-			<code>      return todos.set(action.id, action.todo);</code>
-			<code>    default:</code>
-			<code>      return todos;</code>
-			<code>    }</code>
-			<code>  }</code>
-			<code>}</code>
+			<code>render = (Data) => UI;</code>
+			<code>update = (State, Action) => NewState;</code>
 		</pre>
+
+		<pre>
+			<code class="next">Actions = [Update This, Add That, Delete Shit, ...];</code>
+			<code class="next">AppState = Actions.reduce(update, InitialState);</code>
+			<code class="next">AppState.subscribe(render);</code>
+		</pre>
+
+		<p class="note next"><em>The only thing that didn't change!</em></p>
+	</section>
+
+	<section class="slide">
+		<h2>So <span class="secondary-accent">hot</span> back in <span class="primary-accent">2015</span></h2>
+
+		<ul>
+			<li>Reflux</li>
+			<li>Fluxible</li>
+			<li>Flummox</li>
+			<li>Alt</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Dead<em class="secondary-accent">!</em></h2>
+	</section>
+
+	<section class="slide">
+		<img src="http://winteriscoming.net/wp-content/uploads/2015/02/George-RR-Martin.jpg" class="cover w">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Where is the <br><em class="primary-accent">hype</em> train now?</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><img src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" width="15%" style="vertical-align: bottom;"> Redux<em class="primary-accent next">?</em></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><img src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" width="15%" style="vertical-align: bottom;"> False God</h2>
+	</section>
+
+	<section class="slide">
+		<img src="http://media.comicbook.com/uploads1/2015/04/false-god-132137.jpg" class="cover w">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">
+			<span class="emoji-outer" style="background: url(https://a.slack-edge.com/f360/img/emoji_2016_06_08/sheet_apple_64_indexed_256colors.png);background-position:67.5% 70%;background-size:4100%" title="scream">:scream:</span>
+		</h2>
+	</section>
+
+	<section class="slide snippet">
+		<figure>
+			<blockquote>
+				<p>Unlike Flux, Redux <mark>does not have</mark> the concept of a <mark>Dispatcher</mark>. This is because it relies on pure functions instead of <mark>event emitters</mark>, and pure functions are easy to compose and don’t need <mark>an additional entity</mark> managing them.</p>
+			</blockquote>
+
+			<figcaption><a href="http://redux.js.org/docs/introduction/PriorArt.html">Redux Docs</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>const Store = Redux.createStore(...);</code>
+			<code>Store.<mark>dispatch</mark>(action);</code>
+			<code>Store.<mark>subscribe</mark>(() => ...);</code>
+		</pre>
+
+		<pre>
+			<code>const Dispatcher = new Flux.Dispatcher();</code>
+			<code>Dispatcher.<mark>dispatch</mark>(action);</code>
+			<code>Dispatcher.<mark>register</mark>(() => ...);</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<img src="http://www.electronic-replicant.com/wp-content/uploads/2011/04/Lie-To-Me-Dr.-Cal-Lightman.jpg" class="cover w">
+	</section>
+
+	<section class="slide snippet">
+		<figure>
+			<blockquote>
+				<p>If you’re coming from Flux, there is a single important difference you need to understand. Redux doesn’t have a Dispatcher or support many stores. Instead, there is just a single store with a single root reducing function. As your app grows, <mark>instead of adding stores, you split the root reducer into smaller reducers independently operating on the different parts of the state tree</mark>.</p>
+			</blockquote>
+
+			<figcaption><a href="http://redux.js.org/index.html">Redux Docs</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Instead of <br>adding <em class="primary-accent">stores</em>, <br>you add <em class="secondary-accent">reducers</em></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">
+			<span class="emoji-outer" style="background: url(https://a.slack-edge.com/f360/img/emoji_2016_06_08/sheet_apple_64_indexed_256colors.png);background-position:80% 60%;background-size:4100%" title="unicorn_face">:unicorn_face:</span>
+			<span class="emoji-outer" style="background: url(https://a.slack-edge.com/f360/img/emoji_2016_06_08/sheet_apple_64_indexed_256colors.png);background-position:12.5% 72.5%;background-size:4100%" title="rainbow">:rainbow:</span>
+		</h2>
+	</section>
+
+	<section class="slide snippet">
+		<figure>
+			<blockquote>
+				<p>Redux evolves the ideas of Flux, <mark>but avoids its complexity</mark> by taking cues from Elm.
+Whether you have used them or not, <mark>Redux only takes a few minutes to get started with</mark>.</p>
+			</blockquote>
+
+			<figcaption><a href="http://redux.js.org/index.html">Redux Docs</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/BristolStoolChart.png" class="cover w">
+	</section>
+
+	<section class="slide">
+		<h2><span class="primary-accent">Horizontal</span> vs <span class="secondary-accent">Vertical</span> Surface Area</h2>
+
+		<p class="next"><strong>Horizontal surface area</strong> &mdash; <em>the number of components</em> in your application layer, component layer, layout layer, rendering layer.</p>
+
+		<p class="next"><strong>Vertical surface area</strong> &mdash; <em>the number of layers</em> for a feature.</p>
+
+		<p class="next">Verticals are fixed. Horizontal grows with app complexity.</p>
+	</section>
+
+	<section class="slide">
+		<h2><span class="primary-accent">Redux</span> verticals</h2>
+
+		<ul class="double">
+			<li>Store</li>
+			<li>Reducers</li>
+			<li>Enhancers</li>
+			<li>Middlewares</li>
+			<li>Actions</li>
+			<li>Action Creators</li>
+			<li>Async Action Creators</li>
+			<li>Sagas</li>
+			<li>Containers</li>
+			<li>Selectors</li>
+			<li>Provider</li>
+			<li>Observable</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2><span class="primary-accent">Flux</span> verticals</h2>
+
+		<ul>
+			<li>Stores</li>
+			<li>Dispatcher</li>
+			<li>Actions</li>
+			<li>Action Creators</li>
+			<li>Containers</li>
+		</ul>
+
+		<p class="note">Always remains the same.</p>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout code"><code>npm i --save <span class="primary-accent">flux</span></code></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout code"><code>@2.1.1</code></h2>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>import { <span class="primary-accent">Dispatcher</span> } from 'flux';</code>
+			<code>import { <span class="primary-accent">Container</span>, <span class="primary-accent">ReduceStore</span> } from 'flux/utils';</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">"A lot of <em class="primary-accent">boilerplate</em>"<br> they <em class="secondary-accent">said</em>!</h2>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>import { Dispatcher } from 'flux';</code>
+			<code>export default new Dispatcher();</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Do not <br>underestimate essential <em class="primary-accent">patterns</em>!</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout code"><code>npm i --save <span class="secondary-accent">immutable</span></code></h2>
+	</section>
+
+	<section class="slide">
+		<h2>Essential <span class="primary-accent">patterns</span></h2>
+
+		<ol>
+			<li class="secondary-accent">Define immutable data structures for domain models</li>
+		</ol>
 	</section>
 
 	<section class="slide snippet">
@@ -58,11 +245,22 @@
 			<code>                age: 0, isActive: true };</code>
 			<code>&nbsp;</code>
 			<code>class <span class="primary-accent">UserRecord</span> extends <mark>Record(Shape)</mark> {</code>
-			<code>  get fullName() {</code>
-			<code>    return `${this.firstName} ${this.lastName}`;</code>
-			<code>  }</code>
+			<div class="next">
+				<code>  get fullName() {</code>
+				<code>    return `${this.firstName} ${this.lastName}`;</code>
+				<code>  }</code>
+			</div>
 			<code>}</code>
 		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Essential <span class="primary-accent">patterns</span></h2>
+
+		<ol>
+			<li>Define immutable data structures for domain models</li>
+			<li class="secondary-accent">Provide Web API (Data Access Object pattern)</li>
+		</ol>
 	</section>
 
 	<section class="slide snippet">
@@ -74,6 +272,20 @@
 			<code>  async destroy(id) { ... }</code>
 			<code>}</code>
 		</pre>
+
+		<p class="note">All method returns immutable record defined before.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Essential <span class="primary-accent">patterns</span></h2>
+
+		<ol>
+			<li>Define immutable data structures for domain models</li>
+			<li>Provide Web API (Data Access Object pattern)</li>
+			<ul>
+				<li class="secondary-accent">Use async actions as much as possible</li>
+			</ul>
+		</ol>
 	</section>
 
 	<section class="slide snippet">
@@ -95,19 +307,149 @@
 
 	<section class="slide snippet">
 		<pre>
-			<code>class UserListContainer extends <mark>React.Component</mark> {</code>
-			<code>  static getStores() {</code>
-			<code>    return [UserListStore];</code>
+			<code>class UserListStore extends <mark>ReduceStore</mark> {</code>
+			<div class="next">
+				<code>  getInitialState() {</code>
+				<code>    return new Map();</code>
+				<code>  }</code>
+			</div>
+			<div class="next">
+				<code>  reduce(users, action) {</code>
+				<div class="next">
+					<code>    switch (action.type) {</code>
+					<code>    case <mark>USER_RETRIEVED</mark>:</code>
+					<code>      return users.set(action.id, action.user);</code>
+					<code>    default:</code>
+					<code>      return users;</code>
+					<code>    }</code>
+				</div>
+				<code>  }</code>
+			</div>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>export default new UserListStore(Dispatcher);</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Relationships</h2>
+
+		<ul>
+			<li>In <span class="primary-accent">Flux</span> stores register themselves in Dispatcher</li>
+			<li>In <span class="secondary-accent">Redux</span> the store (a.k.a. Dispatcher) receives reducers as an input</li>
+		</ul>
+
+		<ul class="next">
+			<li>In <span class="primary-accent">Flux</span> you just create new store.</li>
+			<li>In <span class="secondary-accent">Redux</span> you create new reducer and <em>modify</em> the config file.</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Essential <span class="primary-accent">patterns</span></h2>
+
+		<ol>
+			<li>Define immutable data structures for domain models</li>
+			<li>Provide Web API (Data Access Object pattern)</li>
+			<ul>
+				<li>Use async actions as much as possible</li>
+			</ul>
+			<li class="secondary-accent">Provide getter methods in your stores</li>
+		</ol>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>class UserListStore extends ReduceStore {</code>
+			<code class="comment">  // ...</code>
+			<code>  getOnlineUsersCount() {</code>
+			<code>    return this.getState().count(u => u.isOnline);</code>
 			<code>  }</code>
-			<code>  static calculateState() {</code>
-			<code>    const users = UserListStore.getUsers();</code>
-			<code>    return { users };</code>
-			<code>  }</code>
-			<code>  render() {</code>
-			<code>    return &lt;<mark>UserList</mark> users={this.state.users} /&gt;;</code>
+			<code class="comment">  // ...</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Essential <span class="primary-accent">patterns</span></h2>
+
+		<ol>
+			<li>Define immutable data structures for domain models</li>
+			<li>Provide Web API (Data Access Object pattern)</li>
+			<ul>
+				<li>Use async actions as much as possible</li>
+			</ul>
+			<li>Provide getter methods in your stores</li>
+			<li class="secondary-accent">Dispatch errors as separate actions that should be handled as well</li>
+		</ol>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>async function retrieveUser(id) {</code>
+			<code>  try {</code>
+			<code>    const user = await users.retrieve(id);</code>
+			<code>    Dispatcher.dispatch({ type: <mark>USER_RETRIEVED</mark>,</code>
+			<code>                          id, user });</code>
+			<code>  } catch (error) {</code>
+			<code>    Dispatcher.dispatch({ type: <mark>USER_RETRIEVE_FAILED</mark>,</code>
+			<code>                          error });</code>
 			<code>  }</code>
 			<code>}</code>
-			<code>&nbsp;</code>
+		</pre>
+	</section>
+
+	<section class="slide snippet">
+		<figure>
+			<blockquote>
+				<p>There should be one— and preferably only one —obvious way to do it.</p>
+			</blockquote>
+
+			<figcaption>Tim Peters, The Zen of Python</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide snippet">
+		<figure>
+			<blockquote>
+				<p>Special cases aren't special enough to break the rules.</p>
+			</blockquote>
+
+			<figcaption>Tim Peters, The Zen of Python</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
+			<code>class UserListContainer extends <mark>React.Component</mark> {</code>
+			<div class="next">
+				<code>  static getStores() {</code>
+				<code>    return [UserListStore];</code>
+				<code>  }</code>
+			</div>
+			<div class="next">
+				<code>  static calculateState() {</code>
+				<code>    const users = UserListStore.getUsers();</code>
+				<code>    const onlineCount = UserListStore.getOnlineUsersCount();</code>
+				<code>    return { users, onlineCount };</code>
+				<code>  }</code>
+			</div>
+			<div class="next">
+				<code>  render() {</code>
+				<code>    return &lt;<mark>UserList</mark> users={this.state.users}</code>
+				<code>              onlineCount={this.state.onlineCount} /&gt;;</code>
+				<code>  }</code>
+			</div>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide snippet">
+		<pre>
 			<code>export default Container.create(UserListContainer);</code>
 		</pre>
 	</section>
@@ -120,13 +462,40 @@
 			<code>&nbsp;</code>
 			<code>function calculateState() {</code>
 			<code>  const users = UserListStore.getUsers();</code>
-			<code>  return { users };</code>
+			<code>  const onlineCount = UserListStore.getOnlineUsersCount();</code>
+			<code>  return { users, onlineCount };</code>
 			<code>}</code>
 			<code>&nbsp;</code>
 			<code>export default Container.create(<mark>UserList</mark>,</code>
 			<code>                                getStores,</code>
 			<code>                                calculateState);</code>
 		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout code"><code>@3.0.0</code></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Soon&trade;</h2>
+	</section>
+
+	<section class="slide">
+		<h2>What's new?</h2>
+
+		<ul>
+			<li>More docs and guides (testing, development)</li>
+			<li>More examples (old are rewritten using <span class="primary-accent">Immutable and Flux Utils</span>)</li>
+			<li>Better <span class="secondary-accent">Container</span></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">That's all<em class="primary-accent">?</em></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">That's enough<em class="secondary-accent">!</em></h2>
 	</section>
 
 	<section class="slide">
