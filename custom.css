@@ -47,3 +47,19 @@
 .slide .secondary-accent {
 	color: #c2185b;
 }
+.slide .emoji-outer {
+  background-size: 4100%!important;
+  display: inline-block;
+  height: 1em;
+  overflow: hidden;
+  width: 1em;
+  line-height: 2rem;
+  font-size: 10rem;
+  margin-top: 2px;
+  color: transparent!important;
+  text-indent: 100%;
+  text-shadow: none;
+}
+.slide .double {
+  column-gap: 2.5em;
+}
